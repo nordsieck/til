@@ -1,1 +1,3 @@
-# til
+# Then I Learned...
+
+This is a repository of things I've learned that I want to keep track of, but at much too small for a blog post.
