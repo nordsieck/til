@@ -1,4 +1,4 @@
-It is not legal to embed either maps, slices or arrays in other types.
+It is not legal to directly embed either maps, slices or arrays in other types.
 
 ```go
 type A struct {
@@ -8,4 +8,14 @@ type A struct {
 // syntax error: unexpected [, expecting field name or embedded type
 ```
 
-On a practical level, this means that you can never use the `[]` operator on a struct.
+However, you can embed one of these primitive types if you redefine it.
+
+```go
+type stringMap map[string]string
+
+type A struct {
+     stringMap
+}
+```
+
+Even in this case, however, you can't index into the struct.
