@@ -21,3 +21,20 @@ def foo():
 ```
 
 This works fine because _ accesses x from the enclosing scope via reference.
+
+##### Update
+
+There is actually a linguistic fix for this. ```nonlocal```
+
+```python
+
+def foo():
+    x = 0
+    def _():
+        nonlocal x
+        x += 1
+    return _
+```
+
+The only trick with this is that ```nonlocal`` is not a super-set of ```global``;
+instead, they are disjoint sets.
