@@ -38,3 +38,10 @@ def foo():
 
 The only trick with this is that ```nonlocal`` is not a super-set of ```global``;
 instead, they are disjoint sets.
+
+---
+
+python has block level scoping, but the only blocks are:
+* module
+* function body
+* class definition
